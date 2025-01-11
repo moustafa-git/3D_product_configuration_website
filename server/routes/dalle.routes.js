@@ -12,9 +12,9 @@ router.get("/", (req, res) => {
   res.status(200).json({ message: "Hello from DALL.E ROUTES" });
 });
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY, // This is also the default, can be omitted
-});
+// const openai = new OpenAI({
+//   apiKey: process.env.OPENAI_API_KEY, // This is also the default, can be omitted
+// });
 
 // POST route for DALL-E image generation
 router.post("/", async (req, res) => {
