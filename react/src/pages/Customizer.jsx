@@ -98,6 +98,10 @@ const customizer = () => {
       case "stylishShirt":
         state.isFullTexture = !activeFilterTab[tabName];
         break;
+      case "saveShirt":
+        downloadCanvasToImage();
+        setActiveFilterTab((prevState) => ({ ...prevState, saveShirt: false }));
+        return;
       default:
         state.isLogoTexture = true;
         state.isFullTexture = false;
@@ -121,7 +125,7 @@ const customizer = () => {
 
   return (
     <AnimatePresence>
-      {!snap.intro && (
+      {snap.custom && (
         <>
           <motion.div
             key="custom"
@@ -149,7 +153,24 @@ const customizer = () => {
             <CustomButton
               type="filled"
               title="Go Back"
-              handleClick={() => (state.intro = true)}
+              handleClick={() => {
+                state.intro = true;
+                state.custom = false;
+              }}
+              customStyles="w-fit px-4 py-2.5 font-bold text-sm"
+            />
+          </motion.div>
+          <motion.div
+            className="absolute z-20 bottom-5 right-5"
+            {...fadeAnimation}
+          >
+            <CustomButton
+              type="filled"
+              title="Proceed to Checkout"
+              handleClick={() => {
+                state.custom = false;
+                state.check = true;
+              }}
               customStyles="w-fit px-4 py-2.5 font-bold text-sm"
             />
           </motion.div>

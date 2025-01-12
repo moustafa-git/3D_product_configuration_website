@@ -10,6 +10,18 @@ export const downloadCanvasToImage = () => {
   document.body.removeChild(link);
 };
 
+export const getCanvasImage = () => {
+  const canvas = document.querySelector("canvas");
+  if (!canvas) {
+    console.error("Canvas not found");
+    return null;
+  }
+
+  const dataURL = canvas.toDataURL();
+  console.log("Canvas Image Data URL: ", dataURL);
+  return dataURL;
+};
+
 export const reader = (file) =>
   new Promise((resolve, reject) => {
     const fileReader = new FileReader();

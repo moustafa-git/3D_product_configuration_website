@@ -90,3 +90,59 @@ input[type="file"] {
 .sketch-picker > div:nth-child(3) {
   display: none !important;
 }
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-image {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.product-image-display {
+  width: 80%;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+.billing-info-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.payment-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.payment-options {
+  margin: 20px;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 300px;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.custom-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  font-size: 16px;
+}
+
+.custom-button:hover {
+  background-color: #45a049;
+}
