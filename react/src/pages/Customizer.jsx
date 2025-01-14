@@ -16,6 +16,10 @@ import {
   Tab,
 } from "../components";
 
+import { SketchPicker } from "react-color";
+
+import { HexColorPicker } from "react-colorful";
+
 const customizer = () => {
   const snap = useSnapshot(state);
 
@@ -29,6 +33,13 @@ const customizer = () => {
     logoShirt: true,
     stylishShirt: false,
   });
+
+  // Add the custom tab for shirt or shoes selection
+  const handleSelectCustomization = (selection) => {
+    // Set the selected customization type (shirt or shoes)
+    state.modelType = selection;
+    setActiveEditorTab(""); // Reset any active editor tab when switching the type
+  };
 
   //show tab content depending on the active tab
   const generateTabContent = () => {
@@ -125,7 +136,39 @@ const customizer = () => {
 
   return (
     <AnimatePresence>
-      {snap.custom && (
+      {/* Tab selection for shirt or shoes */}
+      <motion.div
+        key="custom"
+        className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10"
+        {...slideAnimation("left")}
+      >
+        <div className="flex space-x-10 bg-white px-4 py-2 rounded-xl shadow-lg">
+          <button
+            className={`${
+              snap.modelType === "shirt"
+                ? "font-bold text-black"
+                : "text-gray-500"
+            } hover:text-black`}
+            onClick={() => handleSelectCustomization("shirt")}
+          >
+            Shirt
+          </button>
+          {/* Shoes Tab (only appears if shoes model exists) */}
+          {snap.shoes && (
+            <button
+              className={`${
+                snap.modelType === "shoes"
+                  ? "font-bold text-black"
+                  : "text-gray-500"
+              } hover:text-black`}
+              onClick={() => handleSelectCustomization("shoes")}
+            >
+              Shoes
+            </button>
+          )}
+        </div>
+      </motion.div>
+      {snap.custom && snap.modelType === "shirt" && (
         <>
           <motion.div
             key="custom"
@@ -156,6 +199,7 @@ const customizer = () => {
               handleClick={() => {
                 state.intro = true;
                 state.custom = false;
+                state.canv = true;
               }}
               customStyles="w-fit px-4 py-2.5 font-bold text-sm"
             />
@@ -170,6 +214,7 @@ const customizer = () => {
               handleClick={() => {
                 state.custom = false;
                 state.check = true;
+                state.canv = false;
               }}
               customStyles="w-fit px-4 py-2.5 font-bold text-sm"
             />
@@ -187,6 +232,60 @@ const customizer = () => {
                 handleClick={() => handleActiveFilterTab(tab.name)}
               />
             ))}
+          </motion.div>
+        </>
+      )}
+
+      {snap.custom && snap.modelType === "shoes" && (
+        <>
+          <motion.div
+            key="custom"
+            className="absolute top-0 left-0 z-10"
+            {...slideAnimation("left")}
+          >
+            <div className="flex items-center min-h-screen">
+              <div className="absolute left-full ml-3">
+                <div style={{ display: snap.current ? "block" : "none" }}>
+                  <HexColorPicker
+                    className="picker"
+                    color={snap.items[snap.current]}
+                    onChange={(color) => (state.items[snap.current] = color)}
+                  />
+                  <h1>{snap.current}</h1>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="absolute z-10 top-5 right-5"
+            {...fadeAnimation}
+          >
+            <CustomButton
+              type="filled"
+              title="Go Back"
+              handleClick={() => {
+                state.intro = true;
+                state.custom = false;
+                state.canv = true;
+              }}
+              customStyles="w-fit px-4 py-2.5 font-bold text-sm"
+            />
+          </motion.div>
+          <motion.div
+            className="absolute z-20 bottom-5 right-5"
+            {...fadeAnimation}
+          >
+            <CustomButton
+              type="filled"
+              title="Proceed to Checkout"
+              handleClick={() => {
+                state.custom = false;
+                state.check = true;
+                state.canv = false;
+              }}
+              customStyles="w-fit px-4 py-2.5 font-bold text-sm"
+            />
           </motion.div>
         </>
       )}

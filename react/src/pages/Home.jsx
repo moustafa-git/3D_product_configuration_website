@@ -26,7 +26,7 @@ const Home = () => {
           <motion.div className="home-content" {...headContainerAnimation}>
             <motion.div {...headTextAnimation}>
               <h1 className="head-text">
-                LET'S <br className="x1:block hidden" /> DO IT.
+                SHOP <br className="x1:block hidden" /> NOW
               </h1>
             </motion.div>
             <motion.div
@@ -45,6 +45,16 @@ const Home = () => {
                 handleClick={() => {
                   state.intro = false;
                   state.custom = true;
+                }}
+                customStyles="w-fit px-4 py-2.5 font-bold text-sm"
+              />
+              <CustomButton
+                type="filled"
+                title="Manage It"
+                handleClick={() => {
+                  state.intro = false;
+                  state.manage = true;
+                  state.canv = false;
                 }}
                 customStyles="w-fit px-4 py-2.5 font-bold text-sm"
               />

@@ -1,18 +1,21 @@
 import Canvas from "./canvas";
 import Home from "./pages/Home";
 import Customizer from "./pages/Customizer";
-<<<<<<< HEAD
+import Manage from "./pages/Manage";
 import Checkout from "./pages/Checkout";
-=======
->>>>>>> 4d8edc217cbd4e36e63d77c747e136987c0ba1d5
+
+import { useSnapshot } from "valtio";
+import state from "./store";
 
 function App() {
+  const snap = useSnapshot(state);
   return (
     <main className="app transition-all ease-in">
       <Home />
       <Checkout />
-      <Canvas />
-      <Customizer />
+      <Manage />
+      {snap.canv && <Canvas />}
+      {snap.custom && <Customizer />}
     </main>
   );
 }

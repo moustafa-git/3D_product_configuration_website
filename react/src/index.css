@@ -146,3 +146,14 @@ input[type="email"] {
 .custom-button:hover {
   background-color: #45a049;
 }
+
+.picker {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 100;
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
