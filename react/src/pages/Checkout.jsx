@@ -32,7 +32,7 @@ const Checkout = () => {
       {snap.check && (
         <section className="bg-gray-50 min-h-screen flex flex-col items-center py-10 px-4">
           {/* Product Section */}
-          <div className="max-w-full sm:max-w-4xl w-full bg-white rounded-lg shadow-lg p-6">
+          <div className="max-w-4xl w-full bg-white rounded-lg shadow-lg p-6">
             <h2 className="text-2xl font-bold text-center mb-4">
               Your Customized Product
             </h2>
@@ -41,7 +41,7 @@ const Checkout = () => {
                 <img
                   src={getCanvasImage()}
                   alt="Your customized product"
-                  className="w-full sm:w-64 h-auto rounded-lg border"
+                  className="w-64 h-auto rounded-lg border"
                 />
               ) : (
                 <p className="text-gray-500">Loading image...</p>
@@ -108,7 +108,7 @@ const Checkout = () => {
 
                   <button
                     type="button"
-                    className="w-full sm:w-auto py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-200"
+                    className="w-full py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-200"
                     style={{ zIndex: 30, position: "relative" }}
                     onClick={handleMockPaymentSubmission}
                   >
@@ -127,7 +127,7 @@ const Checkout = () => {
                     type="filled"
                     title="💳 Pay with Credit Card"
                     handleClick={handleMockPaymentSubmission}
-                    customStyles="w-full sm:w-auto text-lg bg-yellow-400 py-3 rounded-lg hover:bg-yellow-500 transition duration-200"
+                    customStyles="w-full text-lg bg-yellow-400 py-3 rounded-lg hover:bg-yellow-500 transition duration-200"
                   />
                   <div className="text-center font-semibold text-gray-500">
                     or
@@ -136,7 +136,7 @@ const Checkout = () => {
                     type="filled"
                     title="🛡️ Pay with PayPal"
                     handleClick={handleMockPaymentSubmission}
-                    customStyles="w-full sm:w-auto text-lg bg-yellow-400 py-3 rounded-lg hover:bg-yellow-500 transition duration-200"
+                    customStyles="w-full text-lg bg-yellow-400 py-3 rounded-lg hover:bg-yellow-500 transition duration-200"
                   />
                 </div>
               </div>
@@ -144,10 +144,7 @@ const Checkout = () => {
           </div>
 
           {/* Back Button */}
-          <motion.div
-            className="absolute bottom-5 right-5 sm:top-5 sm:left-5"
-            {...fadeAnimation}
-          >
+          <motion.div className="absolute bottom-5 right-5" {...fadeAnimation}>
             <CustomButton
               type="filled"
               title="Customize it"
@@ -159,12 +156,7 @@ const Checkout = () => {
               customStyles="w-fit px-4 py-2.5 font-bold text-sm bg-gray-900 text-white hover:bg-gray-700 transition duration-200"
             />
           </motion.div>
-
-          {/* Home Button */}
-          <motion.div
-            className="absolute top-5 right-5 sm:left-5"
-            {...fadeAnimation}
-          >
+          <motion.div className="absolute top-5 right-5" {...fadeAnimation}>
             <CustomButton
               type="filled"
               title="Home"
