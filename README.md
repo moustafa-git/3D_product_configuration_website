@@ -1,9 +1,4 @@
 <div align="center">
-  <br />
-![Demo GIF](./GIFS/GIF.gif)
-
-  <br />
- 
   <div>
     <img src="https://img.shields.io/badge/-React_JS-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="react.js" />
     <img src="https://img.shields.io/badge/-Three_JS-black?style=for-the-badge&logoColor=white&logo=threedotjs&color=000000" alt="three.js" />
@@ -13,6 +8,9 @@
   <h3 align="center">A 3D Dev Swag Website</h3>
 </div>
 
+## Live Site: https://merry-sundae-8a5cfa.netlify.app/
+
+![Demo GIF](./GIFS/GIF.gif)
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
 - React.js
