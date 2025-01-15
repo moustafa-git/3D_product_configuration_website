@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-![Untitled video - Made with Clipchamp](https://github.com/user-attachments/assets/3e77fa87-90e0-4ad2-bd69-4583550da409)
+![Demo GIF](./GIFS/GIF.gif)
   <br />
  
   <div>
