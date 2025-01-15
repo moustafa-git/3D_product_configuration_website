@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-[![Watch the video](https://i.sstatic.net/Vp2cE.png)]([https://youtu.be/vt5fpE0bzSY](https://youtu.be/1Bp4Y2TAfr8?si=8m4m5VzMowQaPqTs))
+![Untitled video - Made with Clipchamp](https://github.com/user-attachments/assets/3e77fa87-90e0-4ad2-bd69-4583550da409)
   <br />
  
   <div>
