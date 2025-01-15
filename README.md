@@ -1,6 +1,7 @@
 <div align="center">
   <br />
 ![Demo GIF](./GIFS/GIF.gif)
+
   <br />
  
   <div>
